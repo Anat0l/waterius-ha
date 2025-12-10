@@ -1,0 +1,276 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Waterius Integration Setup",
+        "description": "Configure the web server to receive data from Waterius devices.",
+        "data": {
+          "port": "Port",
+          "enable_logging": "Enable logging to Home Assistant logbook"
+        }
+      },
+      "init": {
+        "title": "Waterius Integration Settings",
+        "description": "Configure integration settings and manage devices.",
+        "data": {
+          "port": "Port",
+          "enable_logging": "Enable logging to Home Assistant logbook",
+          "devices_to_remove": "Devices to Remove"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_port": "Port is already in use. Please choose another port.",
+      "unknown": "Unknown error occurred"
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance of the integration is allowed.",
+      "no_devices": "No devices to remove"
+    },
+    "options": {
+      "unknown_device": "Unknown Device",
+      "port": "Port",
+      "enable_logging": "Enable logging to Home Assistant logbook",
+      "devices_to_remove": "Devices to Remove"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "port": "Port",
+          "enable_logging": "Enable logging to Home Assistant logbook",
+          "devices_to_remove": "Devices to Remove"
+        }
+      }
+    },
+    "error": {}
+  },
+  "entity": {
+    "sensor": {
+      "ch0": {
+        "name": "Channel 0"
+      },
+      "ch1": {
+        "name": "Channel 1"
+      },
+      "delta0": {
+        "name": "Delta 0"
+      },
+      "delta1": {
+        "name": "Delta 1"
+      },
+      "voltage": {
+        "name": "Voltage"
+      },
+      "battery": {
+        "name": "Battery"
+      },
+      "voltage_low": {
+        "name": "Low Voltage"
+      },
+      "voltage_diff": {
+        "name": "Voltage Difference"
+      },
+      "channel": {
+        "name": "WiFi Channel"
+      },
+      "wifi_phy_mode": {
+        "name": "WiFi PHY Mode"
+      },
+      "router_mac": {
+        "name": "Router MAC"
+      },
+      "rssi": {
+        "name": "WiFi Signal Level"
+      },
+      "ip": {
+        "name": "IP Address"
+      },
+      "dhcp": {
+        "name": "DHCP"
+      },
+      "version": {
+        "name": "Version"
+      },
+      "version_hw": {
+        "name": "Version"
+      },
+      "version_esp": {
+        "name": "ESP Version"
+      },
+      "esp_id": {
+        "name": "ESP ID"
+      },
+      "flash_id": {
+        "name": "Flash ID"
+      },
+      "freemem": {
+        "name": "Free Memory"
+      },
+      "waketime": {
+        "name": "Wake Time"
+      },
+      "period_min_tuned": {
+        "name": "Period (Tuned)"
+      },
+      "period_min": {
+        "name": "Period"
+      },
+      "setuptime": {
+        "name": "Setup Time"
+      },
+      "boot": {
+        "name": "Boots"
+      },
+      "resets": {
+        "name": "Resets"
+      },
+      "mode": {
+        "name": "Mode"
+      },
+      "setup_finished": {
+        "name": "Setups Finished"
+      },
+      "setup_started": {
+        "name": "Setups Started"
+      },
+      "ntp_errors": {
+        "name": "NTP Errors"
+      },
+      "mqtt": {
+        "name": "MQTT"
+      },
+      "ha": {
+        "name": "Home Assistant"
+      },
+      "http": {
+        "name": "HTTP"
+      },
+      "ch0_start": {
+        "name": "Channel 0 (Start Value)"
+      },
+      "ch1_start": {
+        "name": "Channel 1 (Start Value)"
+      },
+      "imp0": {
+        "name": "Channel 0 Impulses"
+      },
+      "imp1": {
+        "name": "Channel 1 Impulses"
+      },
+      "f0": {
+        "name": "Channel 0 - Conversion Factor"
+      },
+      "f1": {
+        "name": "Channel 1 - Conversion Factor"
+      },
+      "adc0": {
+        "name": "Channel 0 ADC"
+      },
+      "adc1": {
+        "name": "Channel 1 ADC"
+      },
+      "wifi_phy_mode_s": {
+        "name": "WiFi PHY Mode (String)"
+      },
+      "ctype0": {
+        "name": "Channel 0 Type"
+      },
+      "ctype1": {
+        "name": "Channel 1 Type"
+      },
+      "cname0": {
+        "name": "Channel 0 Name"
+      },
+      "cname1": {
+        "name": "Channel 1 Name"
+      },
+      "data_type0": {
+        "name": "Channel 0 Data Type"
+      },
+      "data_type1": {
+        "name": "Channel 1 Data Type"
+      },
+      "serial0": {
+        "name": "Serial Number 0"
+      },
+      "serial1": {
+        "name": "Serial Number 1"
+      },
+      "email": {
+        "name": "Email"
+      },
+      "timestamp": {
+        "name": "Timestamp"
+      },
+      "mac": {
+        "name": "MAC Address"
+      }
+    },
+    "select": {
+      "channel_0_data_type": {
+        "name": "Channel 0 Counter Type",
+        "description": "Counter type for channel 0. MECHANIC - mechanical counter (0), ELECTRONIC - electronic counter (2), NOT_USED - not used.",
+        "state": {
+          "MECHANIC": "Mechanical",
+          "ELECTRONIC": "Electronic",
+          "NOT_USED": "Not Used"
+        }
+      },
+      "channel_1_data_type": {
+        "name": "Channel 1 Counter Type",
+        "description": "Counter type for channel 1. MECHANIC - mechanical counter (0), ELECTRONIC - electronic counter (2), NOT_USED - not used.",
+        "state": {
+          "MECHANIC": "Mechanical",
+          "ELECTRONIC": "Electronic",
+          "NOT_USED": "Not Used"
+        }
+      },
+      "channel_0_data_type_data": {
+        "name": "Channel 0 Data Type",
+        "description": "Data type for channel 0. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
+        "state": {
+          "WATER_COLD": "Cold Water",
+          "WATER_HOT": "Hot Water",
+          "ELECTRO": "Electricity",
+          "GAS": "Gas",
+          "HEAT_GCAL": "Heat (Gcal)",
+          "PORTABLE_WATER": "Portable Water",
+          "OTHER": "Other",
+          "HEAT_KWT": "Heat (kW)"
+        }
+      },
+      "channel_1_data_type_data": {
+        "name": "Channel 1 Data Type",
+        "description": "Data type for channel 1. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
+        "state": {
+          "WATER_COLD": "Cold Water",
+          "WATER_HOT": "Hot Water",
+          "ELECTRO": "Electricity",
+          "GAS": "Gas",
+          "HEAT_GCAL": "Heat (Gcal)",
+          "PORTABLE_WATER": "Portable Water",
+          "OTHER": "Other",
+          "HEAT_KWT": "Heat (kW)"
+        }
+      },
+      "channel_0_conversion_factor": {
+        "name": "Channel 0 - Conversion Factor",
+        "description": "Conversion factor for channel 0. Available values: 1, 10, 100."
+      },
+      "channel_1_conversion_factor": {
+        "name": "Channel 1 - Conversion Factor",
+        "description": "Conversion factor for channel 1. Available values: 1, 10, 100."
+      }
+    },
+    "number": {
+      "period_min_config": {
+        "name": "Data Update Interval",
+        "description": "Device data update interval in minutes (from 1 to 1440 minutes)."
+      }
+    }
+  }
+}
+

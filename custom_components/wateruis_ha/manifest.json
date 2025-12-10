@@ -1,0 +1,13 @@
+{
+  "domain": "wateruis_ha",
+  "name": "Waterius",
+  "codeowners": ["@Anat0l"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/Anat0l/waterius-ha",
+  "integration_type": "hub",
+  "iot_class": "local_polling",
+  "requirements": ["aiohttp>=3.8.0"],
+  "version": "1.0.0"
+}
+
