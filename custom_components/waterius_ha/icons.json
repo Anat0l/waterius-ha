@@ -1,0 +1,27 @@
+{
+  "entity": {
+    "sensor": {
+      "rssi": {
+        "default": "mdi:wifi-off",
+        "range": {
+          "-100": "mdi:wifi-off",
+          "-90": "mdi:wifi-strength-outline",
+          "-80": "mdi:wifi-strength-1",
+          "-70": "mdi:wifi-strength-2",
+          "-60": "mdi:wifi-strength-3",
+          "-50": "mdi:wifi-strength-4"
+        }
+      },
+      "voltage_low": {
+        "default": "mdi:flash",
+        "state": {
+          "true": "mdi:flash-alert",
+          "false": "mdi:flash",
+          "on": "mdi:flash-alert",
+          "off": "mdi:flash"
+        }
+      }
+    }
+  }
+}
+

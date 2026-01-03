@@ -1,0 +1,23 @@
+# Testing requirements for Waterius integration
+
+# Core testing framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-homeassistant-custom-component>=0.13.0
+
+# Home Assistant for testing
+homeassistant>=2023.1.0
+
+# Type checking
+mypy>=1.7.0
+types-aiofiles>=23.2.0
+
+# Code quality
+ruff>=0.1.0
+pylint>=3.0.0
+
+# Additional testing utilities
+pytest-timeout>=2.2.0
+pytest-xdist>=3.5.0
+freezegun>=1.4.0

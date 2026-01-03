@@ -1,0 +1,336 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Waterius Integration Setup",
+        "description": "Waterius integration uses standard Home Assistant endpoints: /api/waterius and /api/waterius/cfg",
+        "data": {}
+      },
+      "init": {
+        "title": "Waterius Integration Settings",
+        "description": "Integration works automatically. To remove a device, use the device menu.",
+        "data": {}
+      },
+      "reconfigure": {
+        "title": "Reconfigure Waterius Integration",
+        "description": "Integration works automatically, no configuration needed.",
+        "data": {}
+      }
+    },
+    "error": {
+      "unknown": "Unknown error occurred"
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance of the integration is allowed.",
+      "reconfigure_successful": "Integration successfully reconfigured",
+      "repair_successful": "Issue successfully fixed",
+      "entry_not_found": "Configuration entry not found"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Waterius Integration Settings",
+        "description": "Configure integration parameters. To remove a device, use the device menu.",
+        "data": {
+          "auto_add_devices": "Automatically add new devices"
+        },
+        "data_description": {
+          "auto_add_devices": "Automatically add new Waterius devices when data is received from unknown devices"
+        }
+      }
+    },
+    "error": {}
+  },
+  "issues": {
+    "device_no_response": {
+      "title": "Device {device_name} is not responding",
+      "description": "Device {device_name} ({device_id}) has not sent data for more than {hours} hours. Please check the device connection and its settings."
+    }
+  },
+  "exceptions": {
+    "invalid_mac_address": {
+      "message": "Invalid MAC address format: {mac}"
+    },
+    "missing_required_field": {
+      "message": "Missing required field: {field}"
+    },
+    "invalid_field_type": {
+      "message": "Field '{field}' has wrong type: expected {expected}, got {got}"
+    },
+    "value_out_of_range": {
+      "message": "Field '{field}' value out of range: {value} (expected {min} to {max})"
+    },
+    "invalid_encoding": {
+      "message": "Invalid data encoding"
+    },
+    "invalid_json": {
+      "message": "Invalid JSON format"
+    },
+    "invalid_request": {
+      "message": "Invalid request"
+    },
+    "zeroconf_no_ipv4": {
+      "message": "Could not determine valid IPv4 addresses for Zeroconf registration"
+    },
+    "zeroconf_conversion_failed": {
+      "message": "Could not convert IPv4 addresses to binary format for Zeroconf"
+    }
+  },
+  "entity": {
+      "sensor": {
+        "zeroconf_status": {
+          "name": "Zeroconf Status",
+          "state": {
+            "registered": "Registered",
+            "not_registered": "Not Registered",
+            "unknown": "Unknown"
+          }
+        }
+      },
+    "sensor": {
+      "ch0": {
+        "name": "Channel 0"
+      },
+      "ch1": {
+        "name": "Channel 1"
+      },
+      "delta0": {
+        "name": "Delta 0"
+      },
+      "delta1": {
+        "name": "Delta 1"
+      },
+      "voltage": {
+        "name": "Voltage"
+      },
+      "battery": {
+        "name": "Battery"
+      },
+      "voltage_low": {
+        "name": "Low Voltage"
+      },
+      "voltage_diff": {
+        "name": "Voltage Difference"
+      },
+      "channel": {
+        "name": "WiFi Channel"
+      },
+      "wifi_phy_mode": {
+        "name": "WiFi PHY Mode"
+      },
+      "router_mac": {
+        "name": "Router MAC"
+      },
+      "rssi": {
+        "name": "WiFi Signal Level"
+      },
+      "ip": {
+        "name": "IP Address"
+      },
+      "dhcp": {
+        "name": "DHCP"
+      },
+      "version": {
+        "name": "Version"
+      },
+      "version_hw": {
+        "name": "Version"
+      },
+      "version_esp": {
+        "name": "ESP Version"
+      },
+      "esp_id": {
+        "name": "ESP ID"
+      },
+      "flash_id": {
+        "name": "Flash ID"
+      },
+      "freemem": {
+        "name": "Free Memory"
+      },
+      "waketime": {
+        "name": "Wake Time"
+      },
+      "period_min_tuned": {
+        "name": "Period (Tuned)"
+      },
+      "period_min": {
+        "name": "Period"
+      },
+      "setuptime": {
+        "name": "Setup Time"
+      },
+      "boot": {
+        "name": "Boots"
+      },
+      "resets": {
+        "name": "Resets"
+      },
+      "mode": {
+        "name": "Mode"
+      },
+      "setup_finished": {
+        "name": "Setups Finished"
+      },
+      "setup_started": {
+        "name": "Setups Started"
+      },
+      "ntp_errors": {
+        "name": "NTP Errors"
+      },
+      "mqtt": {
+        "name": "MQTT"
+      },
+      "ha": {
+        "name": "Home Assistant"
+      },
+      "http": {
+        "name": "HTTP"
+      },
+      "ch0_start": {
+        "name": "Channel 0 (Start Value)"
+      },
+      "ch1_start": {
+        "name": "Channel 1 (Start Value)"
+      },
+      "imp0": {
+        "name": "Channel 0 Impulses"
+      },
+      "imp1": {
+        "name": "Channel 1 Impulses"
+      },
+      "f0": {
+        "name": "Channel 0 - Conversion Factor"
+      },
+      "f1": {
+        "name": "Channel 1 - Conversion Factor"
+      },
+      "adc0": {
+        "name": "Channel 0 ADC"
+      },
+      "adc1": {
+        "name": "Channel 1 ADC"
+      },
+      "wifi_phy_mode_s": {
+        "name": "WiFi PHY Mode (String)"
+      },
+      "ctype0": {
+        "name": "Channel 0 Type"
+      },
+      "ctype1": {
+        "name": "Channel 1 Type"
+      },
+      "cname0": {
+        "name": "Channel 0 Name"
+      },
+      "cname1": {
+        "name": "Channel 1 Name"
+      },
+      "data_type0": {
+        "name": "Channel 0 Data Type"
+      },
+      "data_type1": {
+        "name": "Channel 1 Data Type"
+      },
+      "serial0": {
+        "name": "Serial Number 0"
+      },
+      "serial1": {
+        "name": "Serial Number 1"
+      },
+      "email": {
+        "name": "Email"
+      },
+      "company": {
+        "name": "Company"
+      },
+      "place": {
+        "name": "Place"
+      },
+      "timestamp": {
+        "name": "Timestamp"
+      },
+      "mac": {
+        "name": "MAC Address"
+      },
+      "config_sync": {
+        "name": "Configuration Sync",
+        "state": {
+          "synchronized": "Synchronized",
+          "not_synchronized": "Not Synchronized",
+          "unknown": "Unknown"
+        }
+      }
+    },
+    "select": {
+      "channel_0_data_type": {
+        "name": "Channel 0 Counter Type",
+        "description": "Counter type for channel 0. MECHANIC - mechanical (1), ELECTRONIC - electronic (2), NOT_USED - not used (255).",
+        "state": {
+          "MECHANIC": "Mechanical",
+          "ELECTRONIC": "Electronic",
+          "NOT_USED": "Not Used"
+        }
+      },
+      "channel_1_data_type": {
+        "name": "Channel 1 Counter Type",
+        "description": "Counter type for channel 1. MECHANIC - mechanical (1), ELECTRONIC - electronic (2), NOT_USED - not used (255).",
+        "state": {
+          "MECHANIC": "Mechanical",
+          "ELECTRONIC": "Electronic",
+          "NOT_USED": "Not Used"
+        }
+      },
+      "channel_0_data_type_data": {
+        "name": "Channel 0 Data Type",
+        "description": "Data type for channel 0. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
+        "state": {
+          "WATER_COLD": "Cold Water",
+          "WATER_HOT": "Hot Water",
+          "ELECTRO": "Electricity",
+          "GAS": "Gas",
+          "HEAT_GCAL": "Heat (Gcal)",
+          "PORTABLE_WATER": "Portable Water",
+          "OTHER": "Other",
+          "HEAT_KWT": "Heat (kW)"
+        }
+      },
+      "channel_1_data_type_data": {
+        "name": "Channel 1 Data Type",
+        "description": "Data type for channel 1. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
+        "state": {
+          "WATER_COLD": "Cold Water",
+          "WATER_HOT": "Hot Water",
+          "ELECTRO": "Electricity",
+          "GAS": "Gas",
+          "HEAT_GCAL": "Heat (Gcal)",
+          "PORTABLE_WATER": "Portable Water",
+          "OTHER": "Other",
+          "HEAT_KWT": "Heat (kW)"
+        }
+      },
+      "channel_0_conversion_factor": {
+        "name": "Channel 0 - Conversion Factor",
+        "description": "Conversion factor for channel 0. Available values: 1, 10, 100."
+      },
+      "channel_1_conversion_factor": {
+        "name": "Channel 1 - Conversion Factor",
+        "description": "Conversion factor for channel 1. Available values: 1, 10, 100."
+      }
+    },
+    "number": {
+      "period_min_config": {
+        "name": "Data Update Interval",
+        "description": "Device data update interval in minutes (from 1 to 1440 minutes)."
+      }
+    },
+    "switch": {
+      "send_settings": {
+        "name": "Send Settings",
+        "description": "Enable to send settings to the device on the next data reception. Automatically turns off after sending."
+      }
+    }
+  }
+}
+

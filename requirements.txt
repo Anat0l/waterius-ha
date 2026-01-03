@@ -1,0 +1,28 @@
+# Waterius Home Assistant Integration - Dependencies
+# This file lists all external dependencies required by the integration
+
+# Production Dependencies
+# =======================
+
+# Asynchronous HTTP client/server framework
+# Used for handling HTTP POST requests from Waterius devices
+# License: Apache License 2.0
+# Repository: https://github.com/aio-libs/aiohttp
+# Documentation: https://docs.aiohttp.org/
+aiohttp>=3.8.0
+
+# Development Dependencies
+# =========================
+# Install with: pip install -r requirements.txt
+
+# Static type checker with strict mode
+# Used for type checking with mypy.ini configuration
+# Repository: https://github.com/python/mypy
+# Documentation: https://mypy.readthedocs.io/
+mypy>=1.8.0
+
+# Note: Home Assistant dependencies (http, zeroconf) are automatically 
+# available as they are core components of Home Assistant.
+# See DEPENDENCIES.md for detailed information about all dependencies.
+# See STRICT_TYPING.md for type checking guidelines.
+

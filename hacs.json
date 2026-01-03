@@ -1,0 +1,7 @@
+{
+  "name": "Waterius",
+  "render_readme": true,
+  "country": ["RU", "UA", "BY", "KZ"],
+  "homeassistant": "2024.1.0",
+  "iot_class": "Local Push"
+}

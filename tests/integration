@@ -1,0 +1,47 @@
+"""Common fixtures for Waterius tests."""
+from __future__ import annotations
+
+from collections.abc import Generator
+from unittest.mock import AsyncMock, patch
+
+import pytest
+
+from homeassistant.core import HomeAssistant
+
+from custom_components.waterius_ha.const import DOMAIN
+
+
+@pytest.fixture(autouse=True)
+def auto_enable_custom_integrations(enable_custom_integrations):
+    """Enable custom integrations in all tests."""
+    yield
+
+
+@pytest.fixture
+def mock_setup_entry() -> Generator[AsyncMock]:
+    """Override async_setup_entry."""
+    with patch(
+        "custom_components.waterius_ha.async_setup_entry",
+        return_value=True,
+    ) as mock_setup_entry:
+        yield mock_setup_entry
+
+
+@pytest.fixture
+def mock_device_manager():
+    """Mock DeviceManager."""
+    with patch(
+        "custom_components.waterius_ha.config_flow.DeviceManager"
+    ) as mock_dm:
+        yield mock_dm
+
+
+@pytest.fixture
+def mock_web_server():
+    """Mock WateriusWebServer."""
+    with patch(
+        "custom_components.waterius_ha.config_flow.WateriusWebServer"
+    ) as mock_ws:
+        mock_instance = AsyncMock()
+        mock_ws.return_value = mock_instance
+        yield mock_ws

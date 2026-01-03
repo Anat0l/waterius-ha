@@ -1,0 +1,336 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Настройка интеграции Waterius",
+        "description": "Интеграция Waterius использует стандартные эндпоинты Home Assistant: /api/waterius и /api/waterius/cfg",
+        "data": {}
+      },
+      "init": {
+        "title": "Настройки интеграции Waterius",
+        "description": "Интеграция работает автоматически. Для удаления устройства используйте меню устройства.",
+        "data": {}
+      },
+      "reconfigure": {
+        "title": "Перенастройка интеграции Waterius",
+        "description": "Интеграция работает автоматически, настройка не требуется.",
+        "data": {}
+      }
+    },
+    "error": {
+      "unknown": "Произошла неизвестная ошибка"
+    },
+    "abort": {
+      "single_instance_allowed": "Разрешен только один экземпляр интеграции.",
+      "reconfigure_successful": "Интеграция успешно перенастроена",
+      "repair_successful": "Проблема успешно исправлена",
+      "entry_not_found": "Запись конфигурации не найдена"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Настройки интеграции Waterius",
+        "description": "Настройте параметры интеграции. Для удаления устройства используйте меню устройства.",
+        "data": {
+          "auto_add_devices": "Автоматически добавлять новые устройства"
+        },
+        "data_description": {
+          "auto_add_devices": "Автоматически добавлять новые устройства Waterius при получении данных от неизвестных устройств"
+        }
+      }
+    },
+    "error": {}
+  },
+  "exceptions": {
+    "invalid_mac_address": {
+      "message": "Недопустимый формат MAC адреса: {mac}"
+    },
+    "missing_required_field": {
+      "message": "Отсутствует обязательное поле: {field}"
+    },
+    "invalid_field_type": {
+      "message": "Поле '{field}' имеет неверный тип: ожидается {expected}, получен {got}"
+    },
+    "value_out_of_range": {
+      "message": "Значение поля '{field}' вне допустимого диапазона: {value} (ожидается от {min} до {max})"
+    },
+    "invalid_encoding": {
+      "message": "Недопустимая кодировка данных"
+    },
+    "invalid_json": {
+      "message": "Недопустимый формат JSON"
+    },
+    "invalid_request": {
+      "message": "Недопустимый запрос"
+    },
+    "zeroconf_no_ipv4": {
+      "message": "Не удалось получить корректные IPv4 адреса для регистрации Zeroconf"
+    },
+    "zeroconf_conversion_failed": {
+      "message": "Не удалось преобразовать IPv4 адреса в бинарный формат для Zeroconf"
+    }
+  },
+  "entity": {
+      "sensor": {
+        "zeroconf_status": {
+          "name": "Статус Zeroconf",
+          "state": {
+            "registered": "Зарегистрирован",
+            "not_registered": "Не зарегистрирован",
+            "unknown": "Неизвестно"
+          }
+        }
+      },
+    "sensor": {
+      "ch0": {
+        "name": "Канал 0"
+      },
+      "ch1": {
+        "name": "Канал 1"
+      },
+      "delta0": {
+        "name": "Дельта 0"
+      },
+      "delta1": {
+        "name": "Дельта 1"
+      },
+      "voltage": {
+        "name": "Напряжение"
+      },
+      "battery": {
+        "name": "Батарея"
+      },
+      "voltage_low": {
+        "name": "Низкое напряжение"
+      },
+      "voltage_diff": {
+        "name": "Разница напряжений"
+      },
+      "channel": {
+        "name": "Канал WiFi"
+      },
+      "wifi_phy_mode": {
+        "name": "Режим WiFi PHY"
+      },
+      "router_mac": {
+        "name": "MAC роутера"
+      },
+      "rssi": {
+        "name": "Уровень сигнала WiFi"
+      },
+      "ip": {
+        "name": "IP адрес"
+      },
+      "dhcp": {
+        "name": "DHCP"
+      },
+      "version": {
+        "name": "Версия"
+      },
+      "version_hw": {
+        "name": "Версия"
+      },
+      "version_esp": {
+        "name": "Версия ESP"
+      },
+      "esp_id": {
+        "name": "ID ESP"
+      },
+      "flash_id": {
+        "name": "ID Flash"
+      },
+      "freemem": {
+        "name": "Свободная память"
+      },
+      "waketime": {
+        "name": "Время пробуждения"
+      },
+      "period_min_tuned": {
+        "name": "Период (настроенный)"
+      },
+      "period_min": {
+        "name": "Период"
+      },
+      "setuptime": {
+        "name": "Время настройки"
+      },
+      "boot": {
+        "name": "Загрузок"
+      },
+      "resets": {
+        "name": "Перезагрузок"
+      },
+      "mode": {
+        "name": "Режим"
+      },
+      "setup_finished": {
+        "name": "Настроек завершено"
+      },
+      "setup_started": {
+        "name": "Настроек начато"
+      },
+      "ntp_errors": {
+        "name": "Ошибок NTP"
+      },
+      "mqtt": {
+        "name": "MQTT"
+      },
+      "ha": {
+        "name": "Home Assistant"
+      },
+      "http": {
+        "name": "HTTP"
+      },
+      "ch0_start": {
+        "name": "Канал 0 (начальное значение)"
+      },
+      "ch1_start": {
+        "name": "Канал 1 (начальное значение)"
+      },
+      "imp0": {
+        "name": "Импульсы канала 0"
+      },
+      "imp1": {
+        "name": "Импульсы канала 1"
+      },
+      "f0": {
+        "name": "Канал 0 - Коэффициент пересчета"
+      },
+      "f1": {
+        "name": "Канал 1 - Коэффициент пересчета"
+      },
+      "adc0": {
+        "name": "ADC канала 0"
+      },
+      "adc1": {
+        "name": "ADC канала 1"
+      },
+      "wifi_phy_mode_s": {
+        "name": "WiFi PHY Mode (строка)"
+      },
+      "ctype0": {
+        "name": "Тип канала 0"
+      },
+      "ctype1": {
+        "name": "Тип канала 1"
+      },
+      "cname0": {
+        "name": "Имя канала 0"
+      },
+      "cname1": {
+        "name": "Имя канала 1"
+      },
+      "data_type0": {
+        "name": "Тип данных канала 0"
+      },
+      "data_type1": {
+        "name": "Тип данных канала 1"
+      },
+      "serial0": {
+        "name": "Серийный номер 0"
+      },
+      "serial1": {
+        "name": "Серийный номер 1"
+      },
+      "email": {
+        "name": "Email"
+      },
+      "company": {
+        "name": "Компания"
+      },
+      "place": {
+        "name": "Место"
+      },
+      "timestamp": {
+        "name": "Временная метка"
+      },
+      "mac": {
+        "name": "MAC адрес"
+      },
+      "config_sync": {
+        "name": "Синхронизация настроек",
+        "state": {
+          "synchronized": "Синхронизированы",
+          "not_synchronized": "Не синхронизированы",
+          "unknown": "Неизвестно"
+        }
+      }
+    },
+    "select": {
+      "channel_0_data_type": {
+        "name": "Канал 0 - (01) Тип счетчика",
+        "description": "Тип счетчика для канала 0. MECHANIC - механический (1), ELECTRONIC - электронный (2), NOT_USED - не используется (255).",
+        "state": {
+          "MECHANIC": "Механический",
+          "ELECTRONIC": "Электронный",
+          "NOT_USED": "Не используется"
+        }
+      },
+      "channel_1_data_type": {
+        "name": "Канал 1 - (01) Тип счетчика",
+        "description": "Тип счетчика для канала 1. MECHANIC - механический (1), ELECTRONIC - электронный (2), NOT_USED - не используется (255).",
+        "state": {
+          "MECHANIC": "Механический",
+          "ELECTRONIC": "Электронный",
+          "NOT_USED": "Не используется"
+        }
+      },
+      "channel_0_data_type_data": {
+        "name": "Канал 0 - (05) Учет данных",
+        "description": "Тип данных для канала 0. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
+        "state": {
+          "WATER_COLD": "Холодная вода",
+          "WATER_HOT": "Горячая вода",
+          "ELECTRO": "Электроэнергия",
+          "GAS": "Газ",
+          "HEAT_GCAL": "Тепло (Гкал)",
+          "PORTABLE_WATER": "Питьевая вода",
+          "OTHER": "Другое",
+          "HEAT_KWT": "Тепло (кВт)"
+        }
+      },
+      "channel_1_data_type_data": {
+        "name": "Канал 1 - (05) Учет данных",
+        "description": "Тип данных для канала 1. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
+        "state": {
+          "WATER_COLD": "Холодная вода",
+          "WATER_HOT": "Горячая вода",
+          "ELECTRO": "Электроэнергия",
+          "GAS": "Газ",
+          "HEAT_GCAL": "Тепло (Гкал)",
+          "PORTABLE_WATER": "Питьевая вода",
+          "OTHER": "Другое",
+          "HEAT_KWT": "Тепло (кВт)"
+        }
+      },
+      "channel_0_conversion_factor": {
+        "name": "Канал 0 - (10) Коэффициент пересчета",
+        "description": "Коэффициент пересчета для канала 0. Возможные значения: 1, 10, 100."
+      },
+      "channel_1_conversion_factor": {
+        "name": "Канал 1 - (10) Коэффициент пересчета",
+        "description": "Коэффициент пересчета для канала 1. Возможные значения: 1, 10, 100."
+      }
+    },
+    "number": {
+      "period_min_config": {
+        "name": "Интервал отправки данных",
+        "description": "Интервал обновления данных устройства в минутах (от 1 до 1440 минут)."
+      }
+    },
+    "switch": {
+      "send_settings": {
+        "name": "Отправить настройки",
+        "description": "Включите для отправки настроек устройству при следующем получении данных. Автоматически выключается после отправки."
+      }
+    }
+  },
+  "issues": {
+    "device_no_response": {
+      "title": "Устройство {device_name} не отвечает",
+      "description": "Устройство {device_name} ({device_id}) не отправляло данные более {hours} часов. Проверьте подключение устройства и его настройки."
+    }
+  }
+}
+

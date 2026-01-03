@@ -3,6 +3,20 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Pytest cache
+.pytest_cache/
+
+# Mypy cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
 .Python
 build/
 develop-eggs/
@@ -44,8 +58,12 @@ Thumbs.db
 *.log
 logs/
 
-# Test files (optional - можно оставить или удалить)
-test_*.py
-README_TEST.md
-README.md
+# Temporary test files (не удалять tests/)
+test_device.py
+test_device_simple.py
+
+# Development documentation (внутренняя документация)
+HACS_SUBMISSION.md
+publish_to_github.ps1
+publish_to_github.sh
 
