@@ -64,6 +64,7 @@ test_device_simple.py
 
 # Development documentation (внутренняя документация)
 HACS_SUBMISSION.md
+PUBLISH_CHECKLIST.md
 publish_to_github.ps1
 publish_to_github.sh
 
