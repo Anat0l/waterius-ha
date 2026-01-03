@@ -50,10 +50,10 @@
       "message": "Отсутствует обязательное поле: {field}"
     },
     "invalid_field_type": {
-      "message": "Поле '{field}' имеет неверный тип: ожидается {expected}, получен {got}"
+      "message": "Поле {field} имеет неверный тип: ожидается {expected}, получен {got}"
     },
     "value_out_of_range": {
-      "message": "Значение поля '{field}' вне допустимого диапазона: {value} (ожидается от {min} до {max})"
+      "message": "Значение поля {field} вне допустимого диапазона: {value} (ожидается от {min} до {max})"
     },
     "invalid_encoding": {
       "message": "Недопустимая кодировка данных"
@@ -260,69 +260,61 @@
     "select": {
       "channel_0_data_type": {
         "name": "Канал 0 - (01) Тип счетчика",
-        "description": "Тип счетчика для канала 0. MECHANIC - механический (1), ELECTRONIC - электронный (2), NOT_USED - не используется (255).",
         "state": {
-          "MECHANIC": "Механический",
-          "ELECTRONIC": "Электронный",
-          "NOT_USED": "Не используется"
+          "mechanic": "Механический",
+          "electronic": "Электронный",
+          "not_used": "Не используется"
         }
       },
       "channel_1_data_type": {
         "name": "Канал 1 - (01) Тип счетчика",
-        "description": "Тип счетчика для канала 1. MECHANIC - механический (1), ELECTRONIC - электронный (2), NOT_USED - не используется (255).",
         "state": {
-          "MECHANIC": "Механический",
-          "ELECTRONIC": "Электронный",
-          "NOT_USED": "Не используется"
+          "mechanic": "Механический",
+          "electronic": "Электронный",
+          "not_used": "Не используется"
         }
       },
       "channel_0_data_type_data": {
         "name": "Канал 0 - (05) Учет данных",
-        "description": "Тип данных для канала 0. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
         "state": {
-          "WATER_COLD": "Холодная вода",
-          "WATER_HOT": "Горячая вода",
-          "ELECTRO": "Электроэнергия",
-          "GAS": "Газ",
-          "HEAT_GCAL": "Тепло (Гкал)",
-          "PORTABLE_WATER": "Питьевая вода",
-          "OTHER": "Другое",
-          "HEAT_KWT": "Тепло (кВт)"
+          "water_cold": "Холодная вода",
+          "water_hot": "Горячая вода",
+          "electro": "Электроэнергия",
+          "gas": "Газ",
+          "heat_gcal": "Тепло (Гкал)",
+          "portable_water": "Питьевая вода",
+          "other": "Другое",
+          "heat_kwt": "Тепло (кВт)"
         }
       },
       "channel_1_data_type_data": {
         "name": "Канал 1 - (05) Учет данных",
-        "description": "Тип данных для канала 1. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
         "state": {
-          "WATER_COLD": "Холодная вода",
-          "WATER_HOT": "Горячая вода",
-          "ELECTRO": "Электроэнергия",
-          "GAS": "Газ",
-          "HEAT_GCAL": "Тепло (Гкал)",
-          "PORTABLE_WATER": "Питьевая вода",
-          "OTHER": "Другое",
-          "HEAT_KWT": "Тепло (кВт)"
+          "water_cold": "Холодная вода",
+          "water_hot": "Горячая вода",
+          "electro": "Электроэнергия",
+          "gas": "Газ",
+          "heat_gcal": "Тепло (Гкал)",
+          "portable_water": "Питьевая вода",
+          "other": "Другое",
+          "heat_kwt": "Тепло (кВт)"
         }
       },
       "channel_0_conversion_factor": {
-        "name": "Канал 0 - (10) Коэффициент пересчета",
-        "description": "Коэффициент пересчета для канала 0. Возможные значения: 1, 10, 100."
+        "name": "Канал 0 - (10) Коэффициент пересчета"
       },
       "channel_1_conversion_factor": {
-        "name": "Канал 1 - (10) Коэффициент пересчета",
-        "description": "Коэффициент пересчета для канала 1. Возможные значения: 1, 10, 100."
+        "name": "Канал 1 - (10) Коэффициент пересчета"
       }
     },
     "number": {
       "period_min_config": {
-        "name": "Интервал отправки данных",
-        "description": "Интервал обновления данных устройства в минутах (от 1 до 1440 минут)."
+        "name": "Интервал отправки данных"
       }
     },
     "switch": {
       "send_settings": {
-        "name": "Отправить настройки",
-        "description": "Включите для отправки настроек устройству при следующем получении данных. Автоматически выключается после отправки."
+        "name": "Отправить настройки"
       }
     }
   },

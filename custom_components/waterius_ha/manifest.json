@@ -8,7 +8,7 @@
   "documentation": "https://github.com/Anat0l/waterius-ha",
   "issue_tracker": "https://github.com/Anat0l/waterius-ha/issues",
   "integration_type": "hub",
-  "iot_class": "Local Push",
+  "iot_class": "local_push",
   "requirements": ["aiohttp>=3.8.0"],
   "version": "1.0.0"
 }

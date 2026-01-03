@@ -56,10 +56,10 @@
       "message": "Missing required field: {field}"
     },
     "invalid_field_type": {
-      "message": "Field '{field}' has wrong type: expected {expected}, got {got}"
+      "message": "Field {field} has wrong type: expected {expected}, got {got}"
     },
     "value_out_of_range": {
-      "message": "Field '{field}' value out of range: {value} (expected {min} to {max})"
+      "message": "Field {field} value out of range: {value} (expected {min} to {max})"
     },
     "invalid_encoding": {
       "message": "Invalid data encoding"
@@ -266,69 +266,61 @@
     "select": {
       "channel_0_data_type": {
         "name": "Channel 0 Counter Type",
-        "description": "Counter type for channel 0. MECHANIC - mechanical (1), ELECTRONIC - electronic (2), NOT_USED - not used (255).",
         "state": {
-          "MECHANIC": "Mechanical",
-          "ELECTRONIC": "Electronic",
-          "NOT_USED": "Not Used"
+          "mechanic": "Mechanical",
+          "electronic": "Electronic",
+          "not_used": "Not Used"
         }
       },
       "channel_1_data_type": {
         "name": "Channel 1 Counter Type",
-        "description": "Counter type for channel 1. MECHANIC - mechanical (1), ELECTRONIC - electronic (2), NOT_USED - not used (255).",
         "state": {
-          "MECHANIC": "Mechanical",
-          "ELECTRONIC": "Electronic",
-          "NOT_USED": "Not Used"
+          "mechanic": "Mechanical",
+          "electronic": "Electronic",
+          "not_used": "Not Used"
         }
       },
       "channel_0_data_type_data": {
         "name": "Channel 0 Data Type",
-        "description": "Data type for channel 0. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
         "state": {
-          "WATER_COLD": "Cold Water",
-          "WATER_HOT": "Hot Water",
-          "ELECTRO": "Electricity",
-          "GAS": "Gas",
-          "HEAT_GCAL": "Heat (Gcal)",
-          "PORTABLE_WATER": "Portable Water",
-          "OTHER": "Other",
-          "HEAT_KWT": "Heat (kW)"
+          "water_cold": "Cold Water",
+          "water_hot": "Hot Water",
+          "electro": "Electricity",
+          "gas": "Gas",
+          "heat_gcal": "Heat (Gcal)",
+          "portable_water": "Portable Water",
+          "other": "Other",
+          "heat_kwt": "Heat (kW)"
         }
       },
       "channel_1_data_type_data": {
         "name": "Channel 1 Data Type",
-        "description": "Data type for channel 1. WATER_COLD (0), WATER_HOT (1), ELECTRO (2), GAS (3), HEAT_GCAL (4), PORTABLE_WATER (5), OTHER (6), HEAT_KWT (7).",
         "state": {
-          "WATER_COLD": "Cold Water",
-          "WATER_HOT": "Hot Water",
-          "ELECTRO": "Electricity",
-          "GAS": "Gas",
-          "HEAT_GCAL": "Heat (Gcal)",
-          "PORTABLE_WATER": "Portable Water",
-          "OTHER": "Other",
-          "HEAT_KWT": "Heat (kW)"
+          "water_cold": "Cold Water",
+          "water_hot": "Hot Water",
+          "electro": "Electricity",
+          "gas": "Gas",
+          "heat_gcal": "Heat (Gcal)",
+          "portable_water": "Portable Water",
+          "other": "Other",
+          "heat_kwt": "Heat (kW)"
         }
       },
       "channel_0_conversion_factor": {
-        "name": "Channel 0 - Conversion Factor",
-        "description": "Conversion factor for channel 0. Available values: 1, 10, 100."
+        "name": "Channel 0 - Conversion Factor"
       },
       "channel_1_conversion_factor": {
-        "name": "Channel 1 - Conversion Factor",
-        "description": "Conversion factor for channel 1. Available values: 1, 10, 100."
+        "name": "Channel 1 - Conversion Factor"
       }
     },
     "number": {
       "period_min_config": {
-        "name": "Data Update Interval",
-        "description": "Device data update interval in minutes (from 1 to 1440 minutes)."
+        "name": "Data Update Interval"
       }
     },
     "switch": {
       "send_settings": {
-        "name": "Send Settings",
-        "description": "Enable to send settings to the device on the next data reception. Automatically turns off after sending."
+        "name": "Send Settings"
       }
     }
   }

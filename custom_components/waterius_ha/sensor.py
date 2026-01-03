@@ -43,14 +43,14 @@ _LOGGER = logging.getLogger(__name__)
 
 # Маппинг типов данных на единицы измерения и device_class для оптимизации
 _DATA_TYPE_MAPPING: dict[str, tuple[str | None, SensorDeviceClass | None]] = {
-    "WATER_COLD": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
-    "WATER_HOT": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
-    "PORTABLE_WATER": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
-    "GAS": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.GAS),
-    "ELECTRO": (UnitOfEnergy.KILO_WATT_HOUR, SensorDeviceClass.ENERGY),
-    "HEAT_GCAL": ("Gcal", None),  # Пользовательская единица без device_class
-    "HEAT_KWT": (UnitOfEnergy.KILO_WATT_HOUR, SensorDeviceClass.ENERGY),
-    "OTHER": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
+    "water_cold": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
+    "water_hot": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
+    "portable_water": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
+    "gas": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.GAS),
+    "electro": (UnitOfEnergy.KILO_WATT_HOUR, SensorDeviceClass.ENERGY),
+    "heat_gcal": ("Gcal", None),  # Пользовательская единица без device_class
+    "heat_kwt": (UnitOfEnergy.KILO_WATT_HOUR, SensorDeviceClass.ENERGY),
+    "other": (UnitOfVolume.CUBIC_METERS, SensorDeviceClass.WATER),
 }
 
 # Список сенсоров, которые должны быть скрыты по умолчанию
@@ -1200,14 +1200,14 @@ class WateriusSensor(WateriusEntity, SensorEntity, RestoreEntity):
         
         # Иконки для разных типов данных
         icon_map = {
-            "WATER_COLD": "mdi:water",
-            "WATER_HOT": "mdi:water-boiler",
-            "PORTABLE_WATER": "mdi:water-pump",
-            "GAS": "mdi:fire",
-            "ELECTRO": "mdi:lightning-bolt",
-            "HEAT_GCAL": "mdi:radiator",
-            "HEAT_KWT": "mdi:radiator",
-            "OTHER": "mdi:counter",
+            "water_cold": "mdi:water",
+            "water_hot": "mdi:water-boiler",
+            "portable_water": "mdi:water-pump",
+            "gas": "mdi:fire",
+            "electro": "mdi:lightning-bolt",
+            "heat_gcal": "mdi:radiator",
+            "heat_kwt": "mdi:radiator",
+            "other": "mdi:counter",
         }
         
         return icon_map.get(data_type, "mdi:counter")

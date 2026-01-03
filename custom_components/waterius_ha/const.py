@@ -24,9 +24,9 @@ MAX_JSON_SIZE: Final = 5 * 1024  # Максимальный размер JSON в
 # ⚠️ ВАЖНО: Согласно протоколу устройства Waterius: enum CounterType
 # Структура: (название_опции, числовое_значение)
 _CHANNEL_TYPE_DATA: Final[tuple[tuple[str, int], ...]] = (
-    ("MECHANIC", 0),      # Механический (DISCRETE в прошивке) ⚡ ИСПРАВЛЕНО: было 1
-    ("ELECTRONIC", 2),    # Электронный (ELECTRONIC)
-    ("NOT_USED", 255),    # Не используется / Выключен (NONE = 0xFF)
+    ("mechanic", 0),      # Механический (DISCRETE в прошивке) ⚡ ИСПРАВЛЕНО: было 1
+    ("electronic", 2),    # Электронный (ELECTRONIC)
+    ("not_used", 255),    # Не используется / Выключен (NONE = 0xFF)
 )
 
 # Автоматически генерируемые константы из структуры данных
@@ -43,14 +43,14 @@ _VALUE_TO_CHANNEL_TYPE: Final[dict[int, str]] = {value: name for name, value in 
 # ⚠️ ВАЖНО: enum CounterName из прошивки Waterius (для cname0/cname1)
 # Это ПОСЛЕДОВАТЕЛЬНЫЙ список 0-7
 _COUNTER_NAME_DATA: Final[tuple[tuple[str, int], ...]] = (
-    ("WATER_COLD", 0),      # Холодная вода
-    ("WATER_HOT", 1),       # Горячая вода
-    ("ELECTRO", 2),         # Электроэнергия
-    ("GAS", 3),             # Газ
-    ("HEAT_GCAL", 4),       # Тепло (Гкал)
-    ("PORTABLE_WATER", 5),  # Питьевая вода
-    ("OTHER", 6),           # Другое
-    ("HEAT_KWT", 7),        # Тепло (кВт)
+    ("water_cold", 0),      # Холодная вода
+    ("water_hot", 1),       # Горячая вода
+    ("electro", 2),         # Электроэнергия
+    ("gas", 3),             # Газ
+    ("heat_gcal", 4),       # Тепло (Гкал)
+    ("portable_water", 5),  # Питьевая вода
+    ("other", 6),           # Другое
+    ("heat_kwt", 7),        # Тепло (кВт)
 )
 
 # Генерируем список опций и словари для конвертации CounterName (cname0/cname1)
@@ -91,12 +91,12 @@ def convert_value_to_channel_type(value: int | float | str | None) -> str:
     try:
         value_int = int(float(value)) if value is not None else None
     except (ValueError, TypeError):
-        return "NOT_USED"
+        return "not_used"
     
     if value_int is None:
-        return "NOT_USED"
+        return "not_used"
     
-    return _VALUE_TO_CHANNEL_TYPE.get(value_int, "NOT_USED")
+    return _VALUE_TO_CHANNEL_TYPE.get(value_int, "not_used")
 
 
 def convert_counter_name_to_value(option: str) -> int:

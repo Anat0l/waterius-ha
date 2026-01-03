@@ -386,7 +386,7 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
             # Для остальных select'ов загружаем из _load_from_sensor
             if self.entity_description.key in ("channel_0_data_type", "channel_1_data_type"):
                 # Для типа счетчика: используем NOT_USED для новых устройств
-                self._set_current_option("NOT_USED")
+                self._set_current_option("not_used")
                 _LOGGER.debug(
                     "[%s] Fallback для нового устройства %s: установлен в 'NOT_USED'",
                     self.entity_description.key,
@@ -466,7 +466,7 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
             # Для коэффициентов пересчета возвращаем "1" по умолчанию
             if self.entity_description.key in ("channel_0_conversion_factor", "channel_1_conversion_factor"):
                 return "1"
-            return "NOT_USED"
+            return "not_used"
         
         # Для коэффициентов пересчета (f0, f1)
         if self.entity_description.key in ("channel_0_conversion_factor", "channel_1_conversion_factor"):
@@ -493,17 +493,17 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
         
         # Для ctype селектов
         # ⚡ Согласно протоколу устройства: DISCRETE=0 (Механический), ELECTRONIC=2, NONE=255
-        internal_option: str = "NOT_USED"  # Значение по умолчанию
+        internal_option: str = "not_used"  # Значение по умолчанию
         if type_int == 0:  # ⚡ ИСПРАВЛЕНО: было 1, теперь 0
-            internal_option = "MECHANIC"  # DISCRETE в прошивке = Механический
+            internal_option = "mechanic"  # DISCRETE в прошивке = Механический
         elif type_int == 2:
-            internal_option = "ELECTRONIC"
+            internal_option = "electronic"
         elif type_int == 255:
-            internal_option = "NOT_USED"
+            internal_option = "not_used"
         else:
-            # Неизвестные значения (0=NAMUR, 3=HALL и др.) преобразуются в NOT_USED
-            _LOGGER.debug("Неизвестное значение типа счетчика: %s, используется NOT_USED", type_int)
-            internal_option = "NOT_USED"
+            # Неизвестные значения (0=NAMUR, 3=HALL и др.) преобразуются в not_used
+            _LOGGER.debug("Неизвестное значение типа счетчика: %s, используется not_used", type_int)
+            internal_option = "not_used"
         
         # Если есть маппинг переводов, возвращаем переведенное значение
         if self._reverse_translation_map and internal_option in self._reverse_translation_map:
@@ -526,11 +526,11 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
         
         # Для ctype селектов
         # ⚡ Согласно протоколу устройства: DISCRETE=0 (Механический), ELECTRONIC=2, NONE=255
-        if option == "MECHANIC":
+        if option == "mechanic":
             return CHANNEL_TYPE_MECHANIC  # 0 (DISCRETE в прошивке) ⚡ ИСПРАВЛЕНО
-        elif option == "ELECTRONIC":
+        elif option == "electronic":
             return CHANNEL_TYPE_ELECTRONIC  # 2
-        else:  # NOT_USED и любые другие
+        else:  # not_used и любые другие
             return CHANNEL_TYPE_NOT_USED  # 255
     
     def _get_sensor_key(self) -> str | None:
@@ -560,9 +560,9 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
         if not device or not device.data:
             # Устанавливаем значение по умолчанию в зависимости от типа селекта
             if self.entity_description.key in ("channel_0_data_type_data", "channel_1_data_type_data"):
-                self._attr_current_option = "OTHER"
+                self._attr_current_option = "other"
             else:
-                self._attr_current_option = "NOT_USED"
+                self._attr_current_option = "not_used"
             return
         
         sensor_key = self._get_sensor_key()
@@ -580,9 +580,9 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
         else:
             # Устанавливаем значение по умолчанию
             default_internal = (
-                "OTHER" if self.entity_description.key in ("channel_0_data_type_data", "channel_1_data_type_data")
+                "other" if self.entity_description.key in ("channel_0_data_type_data", "channel_1_data_type_data")
                 else "1" if self.entity_description.key in ("channel_0_conversion_factor", "channel_1_conversion_factor")
-                else "NOT_USED"
+                else "not_used"
             )
             self._set_current_option(default_internal)
 
@@ -721,7 +721,7 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
         if self._option_translation_map and current_value in self._option_translation_map:
             current_value = self._option_translation_map[current_value]
         
-        should_hide = current_value == "NOT_USED"
+        should_hide = current_value == "not_used"
         
         _LOGGER.debug(
             "Обновление видимости для канала устройства %s: текущее значение=%s, should_hide=%s",
@@ -781,7 +781,7 @@ class WateriusSelect(WateriusEntity, SelectEntity, RestoreEntity):
             changed = False
             
             if should_hide:
-                # Скрываем entity, когда тип счетчика = "NOT_USED"
+                # Скрываем entity, когда тип счетчика = "not_used"
                 # Это ЯВНОЕ намерение пользователя - канал не используется
                 if entry.disabled_by == er.RegistryEntryDisabler.INTEGRATION:
                     # Уже скрыта интеграцией - ничего не меняем
