@@ -67,4 +67,5 @@ HACS_SUBMISSION.md
 PUBLISH_CHECKLIST.md
 publish_to_github.ps1
 publish_to_github.sh
+recreate_repo.ps1
 
